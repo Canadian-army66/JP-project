@@ -31,17 +31,7 @@ public class MainManager : MonoBehaviour
     }
     private void Start(ColorPicker colorPicker)
     {
-        if (MainManager.Instance != null)
-        {
-            SetColor(MainManager.Instance.TeamColor);
-        }
-
         colorPicker.SelectColor(Instance.TeamColor);
-    }
-
-    private void SetColor(Color teamColor)
-    {
-        throw new NotImplementedException();
     }
 
     [System.Serializable]
