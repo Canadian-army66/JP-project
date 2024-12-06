@@ -24,11 +24,7 @@ public class MainManager : MonoBehaviour
 
         LoadColor();
     }
-    public void NewColorSelected(Color color)
-    {
-        // add code here to handle when a color is selected
-        MainManager.Instance.TeamColor = color;
-    }
+   
     private void Start(ColorPicker colorPicker)
     {
         colorPicker.SelectColor(Instance.TeamColor);
@@ -37,20 +33,18 @@ public class MainManager : MonoBehaviour
     [System.Serializable]
     class SaveData
     {
-        public Color TeamColor;
+     public Color TeamColor;
     }
 
     public void SaveColor()
     {
-        SaveData data = new SaveData();
-        data.TeamColor = TeamColor;
+     SaveData data = new SaveData();
+     data.TeamColor = TeamColor;
 
-        string json = JsonUtility.ToJson(data);
-
-        File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
+     string json = JsonUtility.ToJson(data);
+     File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
     }
-
-    public void LoadColor()
+      public void LoadColor()
     {
         string path = Application.persistentDataPath + "/savefile.json";
         if (File.Exists(path))

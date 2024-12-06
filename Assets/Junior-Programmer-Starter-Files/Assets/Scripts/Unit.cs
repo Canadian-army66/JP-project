@@ -25,12 +25,12 @@ public abstract class Unit : MonoBehaviour,
     }
 
     private void Start()
+{
+    if (MainManager.Instance != null)
     {
-        if (MainManager.Instance != null)
-        {
-            SetColor(MainManager.Instance.TeamColor);
-        }
+        SetColor(MainManager.Instance.TeamColor);
     }
+}
 
     void SetColor(Color c)
     {
