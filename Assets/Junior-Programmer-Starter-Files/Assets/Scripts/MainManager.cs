@@ -25,7 +25,7 @@ public class MainManager : MonoBehaviour
         LoadColor();
     }
    
-    private void Start(ColorPicker colorPicker)
+    private void Start (ColorPicker colorPicker)
     {
         colorPicker.SelectColor(Instance.TeamColor);
     }
